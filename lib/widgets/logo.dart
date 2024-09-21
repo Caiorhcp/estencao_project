@@ -8,18 +8,18 @@ class Logo extends StatelessWidget {
     return const Row(
       children: [
         Text(
-          'Flutter',
+          'Xote',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
         Text(
-          'Music',
+          'Eventos',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.blue,
-          ),
+          ),         
         ),
       ],
     );

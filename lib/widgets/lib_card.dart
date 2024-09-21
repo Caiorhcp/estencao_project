@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class LibCard extends StatelessWidget {
   final String image;
-  final String libName;
-  final String authorName;
+  final String libName; 
+  final String authorName; 
 
   const LibCard({
     required this.image,
@@ -23,18 +23,20 @@ class LibCard extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(image),
+              fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(20.0),
           ),
         ),
+        const SizedBox(height: 8.0), 
         Text(
-          libName,
+          'Evento: $libName', 
           style: const TextStyle(
             color: Colors.white,
           ),
         ),
         Text(
-          authorName,
+          'Detalhes: $authorName', 
           style: const TextStyle(
             color: Colors.white70,
             fontSize: 12.0,

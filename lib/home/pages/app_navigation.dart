@@ -34,7 +34,7 @@ class _AppNavigationState extends State<AppNavigation> {
         currentIndex: currentIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.music_note),
+            icon: Icon(Icons.home),
             label: 'Início',
           ),
           BottomNavigationBarItem(
@@ -42,7 +42,7 @@ class _AppNavigationState extends State<AppNavigation> {
             label: 'Buscar',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.library_add),
+            icon: Icon(Icons.favorite),
             label: 'Biblioteca',
           ),
         ],

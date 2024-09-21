@@ -13,7 +13,7 @@ class SearchPage extends StatelessWidget {
         height: size.height,
         color: Colors.amber,
         child: const Center(
-          child: Text('SEARCH PAGE'),
+          child: Text('Fav Page'),
         ),
       ),
     );
