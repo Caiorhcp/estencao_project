@@ -11,6 +11,7 @@ class Logo extends StatelessWidget {
           'Xote',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 26,
             color: Colors.white,
           ),
         ),
@@ -18,6 +19,7 @@ class Logo extends StatelessWidget {
           'Eventos',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 26,
             color: Colors.blue,
           ),         
         ),

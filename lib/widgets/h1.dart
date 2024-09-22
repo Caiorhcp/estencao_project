@@ -11,7 +11,7 @@ class H1 extends StatelessWidget {
       label,
       style: const TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 20.0,
+        fontSize: 22.0,
         color: Colors.white,
       ),
     );

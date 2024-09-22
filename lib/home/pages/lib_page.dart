@@ -13,7 +13,7 @@ class LibPage extends StatelessWidget {
         height: size.height,
         color: Colors.blue,
         child: const Center(
-          child: Text('Map page'),
+          child: Text('fav Page'),
         ),
       ),
     );

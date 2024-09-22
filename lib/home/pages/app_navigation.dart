@@ -43,7 +43,7 @@ class _AppNavigationState extends State<AppNavigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Biblioteca',
+            label: 'Favoritos',
           ),
         ],
       ),

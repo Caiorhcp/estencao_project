@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music/widgets/h1.dart';
-import 'package:flutter_music/widgets/logo.dart';
-import 'package:flutter_music/widgets/text_entry.dart';
+import 'package:flutter_music/widgets/logo.dart'; // Importando apenas o Logo
 import 'package:flutter_music/widgets/scroll_menu.dart';
 import 'package:flutter_music/widgets/event_card.dart'; 
 import 'package:flutter_music/home/pages/page1.dart'; 
@@ -35,15 +34,14 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 80, 
         backgroundColor: const Color(0xff282828),
         title: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start, 
             children: [
-              Logo(),
-              SizedBox(width: 10),
-              Expanded(child: TextEntry()),
+              Logo(),  
             ],
           ),
         ),
@@ -68,7 +66,7 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: H1('Mais Recentes'),
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 14.0),
               //"Mais Recentes"
               SizedBox(
                 height: 130,
@@ -132,7 +130,7 @@ class HomePage extends StatelessWidget {
               EventCard(
                 image: libs[2]['image']!,
                 eventName: libs[2]['libName']!,
-                location: 'Praia Grande',
+                location: 'bueiro do Shopping',
                 details: 'Sexta, 22:00',
               ),
               const SizedBox(height: 20.0), 

@@ -18,16 +18,27 @@ class ScrollMenu extends StatelessWidget {
         children: List.generate(menuItems.length, (index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
-            child: ActionChip(
-              label: Text(menuItems[index]),
-              backgroundColor: const Color(0xff444444),
-              labelStyle: const TextStyle(color: Colors.white),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => pages[index]),
-                );
-              },
+            child: SizedBox(
+              height: 50, 
+              child: ActionChip(
+                label: Text(menuItems[index]),
+                backgroundColor: const Color(0xff444444),
+                labelStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16, 
+                ),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10.0, 
+                  horizontal: 16.0,
+                ), 
+                shape: const StadiumBorder(),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => pages[index]),
+                  );
+                },
+              ),
             ),
           );
         }),
