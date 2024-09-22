@@ -1,5 +1,3 @@
-// lib/widgets/event_card.dart
-
 import 'package:flutter/material.dart';
 
 class EventCard extends StatelessWidget {

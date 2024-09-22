@@ -6,8 +6,8 @@ class TextEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 250, // Largura do campo
-      height: 36, // Altura do campo
+      width: 250, 
+      height: 36, 
       child: TextField(
         style: const TextStyle(
           color: Colors.white,

@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                 child: H1('Mais Recentes'),
               ),
               const SizedBox(height: 8.0),
-              // ListView horizontal para "Mais Recentes"
+              //"Mais Recentes"
               SizedBox(
                 height: 130,
                 child: ListView.builder(

@@ -1,5 +1,3 @@
-// lib/widgets/scroll_menu.dart
-
 import 'package:flutter/material.dart';
 
 class ScrollMenu extends StatelessWidget {
