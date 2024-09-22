@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music/widgets/h1.dart';
-import 'package:flutter_music/widgets/logo.dart'; // Importando apenas o Logo
+import 'package:flutter_music/widgets/logo.dart';
 import 'package:flutter_music/widgets/scroll_menu.dart';
 import 'package:flutter_music/widgets/event_card.dart'; 
 import 'package:flutter_music/home/pages/page1.dart'; 
