@@ -1,0 +1,33 @@
+Tentar fazer uma iniciação do app, ao entrar nele, aparecer O nome do app com animação e depois aparecer a tela da home page,
+
+na search page
+swuippe dos cards no pesqusisas recentes, passar eles para o lado e eles serem deletados, alemde um botão  no fim da tela para apagar todos os cards de uma vez
+nome dentro dos cards de clique para mais detalhes,
+Quando não tiver nada na paginam terá no meio da tela uma arte e a frase: nenhum item favoritado encontrado
+
+na home page,
+no menu, tentar colocar artes com o nome de cada coisa que ira colocar para ficar mais apresentavel
+talvez colocar uma outra informação acerta dos eventos
+talvez um menu se o projeto for avançar mais
+mudar a ordem da barra de baixo, a home no meio, a search na esquerda e o favoritos na direita
+
+Features
+fazer um icone de notificação e criar um sistema de alarme e alerta com prioridade por tempo
+criar a função de ao ser favoritado o card de event ou o evento na pagina de evento, ele ir como card para a pagina de faroritos
+Sistema de feedback, um sistema de avaliar e mandar mensagem
+
+por enquanto NÃO colocar a api nem pagina do mapa do google, por enquanto ser apenas o link para o google maps
+
+Usar firebase e "criar" a api para os eventos
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+No final de tudo preparar o ambiente para receber as api
