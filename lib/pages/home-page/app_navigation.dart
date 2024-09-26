@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_music/home/pages/home_page.dart';
-import 'package:flutter_music/home/pages/lib_page.dart';
-import 'package:flutter_music/home/pages/search_page.dart';
+import 'package:flutter_music/pages/home-page/home_page.dart';
+import 'package:flutter_music/pages/lib_page/lib_page.dart';
+import 'package:flutter_music/pages/search-page/search_page.dart';
 
 class AppNavigation extends StatefulWidget {
   const AppNavigation({super.key});

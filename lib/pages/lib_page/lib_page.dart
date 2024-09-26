@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'favorite_events_list.dart';
 
 class LibPage extends StatefulWidget {
   const LibPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _LibPageState createState() => _LibPageState();
 }
 
 class _LibPageState extends State<LibPage> {
-  // Lista de favoritos (simulando os eventos favoritos)
   final List<Map<String, String>> favoriteEvents = [
     {
       'image': 'assets/images/lib1.jpg',
@@ -23,50 +22,43 @@ class _LibPageState extends State<LibPage> {
     },
   ];
 
-  // Lista filtrada
   List<Map<String, String>> filteredEvents = [];
-
-  // Filtros selecionados
   String? selectedLocation;
   String? selectedTime;
 
   @override
   void initState() {
     super.initState();
-    // Inicialmente, exibe todos os eventos
     filteredEvents = List.from(favoriteEvents);
   }
 
-  // Função para limpar todos os favoritos
   void _clearFavorites() {
     setState(() {
       favoriteEvents.clear();
-      filteredEvents.clear(); // Limpa também os filtrados
+      filteredEvents.clear();
     });
   }
 
-  // Mostrar diálogo de confirmação de exclusão
   Future<void> _showClearConfirmationDialog() async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // Não permite fechar clicando fora
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Confirmar Exclusão'),
-          content: const Text(
-              'Você tem certeza que deseja excluir todos os favoritos?'),
+          content: const Text('Você tem certeza que deseja excluir todos os favoritos?'),
           actions: <Widget>[
             TextButton(
               child: const Text('Cancelar'),
               onPressed: () {
-                Navigator.of(context).pop(); // Fechar o diálogo sem excluir
+                Navigator.of(context).pop();
               },
             ),
             TextButton(
               child: const Text('Excluir', style: TextStyle(color: Colors.red)),
               onPressed: () {
-                Navigator.of(context).pop(); // Fechar o diálogo
-                _clearFavorites(); // Excluir todos os favoritos
+                Navigator.of(context).pop();
+                _clearFavorites();
               },
             ),
           ],
@@ -75,7 +67,6 @@ class _LibPageState extends State<LibPage> {
     );
   }
 
-  // Exibir opções de filtro no centro da tela
   Future<void> _showFilterDialog() async {
     return showDialog<void>(
       context: context,
@@ -87,13 +78,12 @@ class _LibPageState extends State<LibPage> {
               return Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Filtro por Localização
                   DropdownButton<String>(
                     hint: const Text('Localização'),
                     value: selectedLocation,
                     items: favoriteEvents
                         .map((event) => event['location']!)
-                        .toSet() // Remove duplicatas
+                        .toSet()
                         .map((location) {
                       return DropdownMenuItem<String>(
                         value: location,
@@ -106,13 +96,12 @@ class _LibPageState extends State<LibPage> {
                       });
                     },
                   ),
-                  // Filtro por Tempo
                   DropdownButton<String>(
                     hint: const Text('Horário'),
                     value: selectedTime,
                     items: favoriteEvents
                         .map((event) => event['time']!)
-                        .toSet() // Remove duplicatas
+                        .toSet()
                         .map((time) {
                       return DropdownMenuItem<String>(
                         value: time,
@@ -139,8 +128,8 @@ class _LibPageState extends State<LibPage> {
             ElevatedButton(
               child: const Text('Aplicar Filtros'),
               onPressed: () {
-                _applyFilters(); // Aplica os filtros
-                Navigator.pop(context); // Fecha o diálogo
+                _applyFilters();
+                Navigator.pop(context);
               },
             ),
           ],
@@ -149,7 +138,7 @@ class _LibPageState extends State<LibPage> {
     );
   }
 
-  // Função para aplicar filtros
+//Chatgtp da massa nesse caraio aqui
   void _applyFilters() {
     setState(() {
       filteredEvents = favoriteEvents.where((event) {
@@ -173,14 +162,13 @@ class _LibPageState extends State<LibPage> {
           if (favoriteEvents.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.filter_list, color: Colors.white),
-              onPressed: _showFilterDialog, // Mostrar diálogo de filtro
+              onPressed: _showFilterDialog,
               tooltip: 'Filtrar favoritos',
             ),
           if (favoriteEvents.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.delete_forever, color: Colors.white),
-              onPressed:
-                  _showClearConfirmationDialog, // Mostrar diálogo de confirmação
+              onPressed: _showClearConfirmationDialog,
               tooltip: 'Remover todos os favoritos',
             ),
         ],
@@ -190,92 +178,16 @@ class _LibPageState extends State<LibPage> {
         height: size.height,
         color: const Color.fromARGB(255, 12, 0, 59),
         padding: const EdgeInsets.all(16.0),
-        child: filteredEvents.isEmpty
-            ? _buildEmptyFavoritesView()
-            : ListView.builder(
-                itemCount: filteredEvents.length,
-                itemBuilder: (context, index) {
-                  final event = filteredEvents[index];
-                  return Card(
-                    color: const Color.fromARGB(255, 13, 0, 86),
-                    margin: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset(
-                              event['image']!,
-                              width: 120,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          const SizedBox(width: 12.0),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  event['location']!,
-                                  style: const TextStyle(
-                                    color: Color.fromARGB(255, 255, 153, 0),
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                const SizedBox(height: 4.0),
-                                Text(
-                                  event['time']!,
-                                  style: const TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                favoriteEvents
-                                    .removeAt(index); // Remove dos favoritos
-                                filteredEvents.removeAt(
-                                    index); // Remove também dos filtrados
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
+        child: FavoriteEventsList(
+          events: filteredEvents,
+          onRemove: (index) {
+            setState(() {
+              favoriteEvents.removeAt(index);
+              filteredEvents.removeAt(index);
+            });
+          },
+        ),
       ),
-    );
-  }
-
-  // Exibir a tela de favoritos vazios com uma mensagem de "Buscar Eventos"
-  Widget _buildEmptyFavoritesView() {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          Icons.favorite_border,
-          color: Colors.white70,
-          size: 100,
-        ),
-        SizedBox(height: 16.0),
-        Text(
-          'Nenhum favorito adicionado.',
-          style: TextStyle(color: Colors.white70, fontSize: 18),
-        ),
-        SizedBox(height: 16.0),
-      ],
     );
   }
 }
