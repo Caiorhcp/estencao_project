@@ -20,8 +20,8 @@ class Logo extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 26,
-            color: Colors.blue,
-          ),         
+            color: Color.fromARGB(255, 255, 153, 0),
+          ),
         ),
       ],
     );

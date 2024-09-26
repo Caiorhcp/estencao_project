@@ -19,18 +19,18 @@ class ScrollMenu extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: SizedBox(
-              height: 50, 
+              height: 50,
               child: ActionChip(
                 label: Text(menuItems[index]),
-                backgroundColor: const Color(0xff444444),
+                backgroundColor: const Color.fromARGB(255, 13, 0, 86),
                 labelStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 16, 
+                  fontSize: 16,
                 ),
                 padding: const EdgeInsets.symmetric(
-                  vertical: 10.0, 
+                  vertical: 10.0,
                   horizontal: 16.0,
-                ), 
+                ),
                 shape: const StadiumBorder(),
                 onPressed: () {
                   Navigator.push(

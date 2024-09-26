@@ -36,7 +36,11 @@ class _SearchPageState extends State<SearchPage> {
     if (searchQuery.isEmpty) {
       return events;
     }
-    return events.where((event) => event['location']!.toLowerCase().contains(searchQuery.toLowerCase())).toList();
+    return events
+        .where((event) => event['location']!
+            .toLowerCase()
+            .contains(searchQuery.toLowerCase()))
+        .toList();
   }
 
   @override
@@ -45,13 +49,14 @@ class _SearchPageState extends State<SearchPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Buscar Eventos', style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color(0xff282828),
+        title:
+            const Text('Buscar Eventos', style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color.fromARGB(255, 3, 0, 42),
       ),
       body: Container(
         width: size.width,
         height: size.height,
-        color: const Color(0xff333333),
+        color: const Color.fromARGB(255, 12, 0, 59),
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +65,7 @@ class _SearchPageState extends State<SearchPage> {
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: const Color(0xff444444),
+                fillColor: const Color.fromARGB(255, 13, 0, 86),
                 hintText: 'Digite o nome do evento...',
                 hintStyle: const TextStyle(color: Colors.white70),
                 border: OutlineInputBorder(
@@ -94,7 +99,7 @@ class _SearchPageState extends State<SearchPage> {
                       itemBuilder: (context, index) {
                         final event = _filterEvents()[index];
                         return Card(
-                          color: const Color(0xff444444),
+                          color: const Color.fromARGB(255, 13, 0, 86),
                           margin: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -112,12 +117,14 @@ class _SearchPageState extends State<SearchPage> {
                                 const SizedBox(width: 12.0),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         event['location']!,
                                         style: const TextStyle(
-                                          color: Colors.blue,
+                                          color:
+                                              Color.fromARGB(255, 255, 153, 0),
                                           fontSize: 16,
                                         ),
                                       ),
@@ -134,12 +141,17 @@ class _SearchPageState extends State<SearchPage> {
                                 ),
                                 IconButton(
                                   icon: Icon(
-                                    favoriteStates[index] ? Icons.favorite : Icons.favorite_border,
-                                    color: favoriteStates[index] ? Colors.red : Colors.white,
+                                    favoriteStates[index]
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color: favoriteStates[index]
+                                        ? Colors.red
+                                        : Colors.white,
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      favoriteStates[index] = !favoriteStates[index];
+                                      favoriteStates[index] =
+                                          !favoriteStates[index];
                                     });
                                   },
                                 ),

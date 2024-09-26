@@ -53,7 +53,8 @@ class _LibPageState extends State<LibPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Confirmar Exclusão'),
-          content: const Text('Você tem certeza que deseja excluir todos os favoritos?'),
+          content: const Text(
+              'Você tem certeza que deseja excluir todos os favoritos?'),
           actions: <Widget>[
             TextButton(
               child: const Text('Cancelar'),
@@ -152,7 +153,8 @@ class _LibPageState extends State<LibPage> {
   void _applyFilters() {
     setState(() {
       filteredEvents = favoriteEvents.where((event) {
-        final matchLocation = selectedLocation == null || event['location'] == selectedLocation;
+        final matchLocation =
+            selectedLocation == null || event['location'] == selectedLocation;
         final matchTime = selectedTime == null || event['time'] == selectedTime;
         return matchLocation && matchTime;
       }).toList();
@@ -166,7 +168,7 @@ class _LibPageState extends State<LibPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Favoritos', style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color(0xff282828),
+        backgroundColor: const Color.fromARGB(255, 3, 0, 42),
         actions: [
           if (favoriteEvents.isNotEmpty)
             IconButton(
@@ -177,7 +179,8 @@ class _LibPageState extends State<LibPage> {
           if (favoriteEvents.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.delete_forever, color: Colors.white),
-              onPressed: _showClearConfirmationDialog, // Mostrar diálogo de confirmação
+              onPressed:
+                  _showClearConfirmationDialog, // Mostrar diálogo de confirmação
               tooltip: 'Remover todos os favoritos',
             ),
         ],
@@ -185,7 +188,7 @@ class _LibPageState extends State<LibPage> {
       body: Container(
         width: size.width,
         height: size.height,
-        color: const Color(0xff333333),
+        color: const Color.fromARGB(255, 12, 0, 59),
         padding: const EdgeInsets.all(16.0),
         child: filteredEvents.isEmpty
             ? _buildEmptyFavoritesView()
@@ -194,7 +197,7 @@ class _LibPageState extends State<LibPage> {
                 itemBuilder: (context, index) {
                   final event = filteredEvents[index];
                   return Card(
-                    color: const Color(0xff444444),
+                    color: const Color.fromARGB(255, 13, 0, 86),
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -217,7 +220,7 @@ class _LibPageState extends State<LibPage> {
                                 Text(
                                   event['location']!,
                                   style: const TextStyle(
-                                    color: Colors.blue,
+                                    color: Color.fromARGB(255, 255, 153, 0),
                                     fontSize: 16,
                                   ),
                                 ),
@@ -239,8 +242,10 @@ class _LibPageState extends State<LibPage> {
                             ),
                             onPressed: () {
                               setState(() {
-                                favoriteEvents.removeAt(index); // Remove dos favoritos
-                                filteredEvents.removeAt(index); // Remove também dos filtrados
+                                favoriteEvents
+                                    .removeAt(index); // Remove dos favoritos
+                                filteredEvents.removeAt(
+                                    index); // Remove também dos filtrados
                               });
                             },
                           ),

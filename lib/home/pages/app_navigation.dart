@@ -23,9 +23,9 @@ class _AppNavigationState extends State<AppNavigation> {
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xff282828),
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 3, 0, 42),
+        selectedItemColor: const Color.fromARGB(255, 255, 153, 0),
+        unselectedItemColor: const Color.fromARGB(170, 203, 203, 203),
         onTap: (index) {
           setState(() {
             currentIndex = index;
