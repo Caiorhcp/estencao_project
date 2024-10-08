@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_music/pages/page1/page1.dart';
-import 'package:flutter_music/pages/page2/page2.dart';
-import 'package:flutter_music/pages/page3/page3.dart';
-import 'package:flutter_music/pages/page4/page4.dart';
-import 'package:flutter_music/widgets/scroll_menu.dart';
+import 'package:xotecariri/pages/page1/page1.dart';
+import 'package:xotecariri/pages/page2/page2.dart';
+import 'package:xotecariri/pages/page3/page3.dart';
+import 'package:xotecariri/pages/page4/page4.dart';
+import 'package:xotecariri/widgets/scroll_menu.dart';
 
 class MenuSection extends StatelessWidget {
   const MenuSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final menuItems = ['Pag1', 'Pag2', 'Pag3', 'Pag4'];
+    final menuItems = ['Shows', 'Gastronomia', 'Cultura', 'Esportes'];
     final pages = [
       const Page1(),
       const Page2(),
       const Page3(),
       const Page4(),
+    ];
+    final icons = [
+      Icons.music_note, // Ícone para Shows
+      Icons.local_dining, // Ícone para Gastronomia
+      Icons.theater_comedy, // Ícone para Cultura
+      Icons.sports_soccer, // Ícone para Esportes
     ];
 
     return Padding(
@@ -36,6 +42,7 @@ class MenuSection extends StatelessWidget {
             child: ScrollMenu(
               menuItems: menuItems,
               pages: pages,
+              icons: icons, // Passando a lista de ícones
             ),
           ),
         ],

@@ -157,7 +157,7 @@ class _LibPageState extends State<LibPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Favoritos', style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color.fromARGB(255, 3, 0, 42),
+        backgroundColor: Color(0xFF000D1F),
         actions: [
           if (favoriteEvents.isNotEmpty)
             IconButton(
@@ -176,7 +176,7 @@ class _LibPageState extends State<LibPage> {
       body: Container(
         width: size.width,
         height: size.height,
-        color: const Color.fromARGB(255, 12, 0, 59),
+        color: const Color(0xFF02142F),
         padding: const EdgeInsets.all(16.0),
         child: FavoriteEventsList(
           events: filteredEvents,

@@ -88,7 +88,7 @@ class RecentEventsSection extends StatelessWidget {
                       Text(
                         'Evento: ${libs[index]['libName']}',
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: Color(0xFFFFB854),
                           fontSize: 12,
                         ),
                         textAlign: TextAlign.center,

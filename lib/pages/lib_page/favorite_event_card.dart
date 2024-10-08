@@ -17,7 +17,7 @@ class FavoriteEventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 13, 0, 86),
+      color: const Color(0xFF000D1F),
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -40,7 +40,7 @@ class FavoriteEventCard extends StatelessWidget {
                   Text(
                     location,
                     style: const TextStyle(
-                      color: Color.fromARGB(255, 255, 153, 0),
+                      color: Color(0xFFFFB854),
                       fontSize: 16,
                     ),
                   ),

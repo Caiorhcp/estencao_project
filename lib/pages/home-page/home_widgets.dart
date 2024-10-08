@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_music/pages/home-page/event_card.dart';
-import 'package:flutter_music/pages/home-page/home_page.dart';
-import 'package:flutter_music/pages/pages/lib_page.dart';
-import 'package:flutter_music/pages/search-page/search_page.dart';
-import 'package:flutter_music/widgets/lib_card_list.dart';
-import 'package:flutter_music/widgets/logo.dart';
-import 'package:flutter_music/widgets/scroll_menu.dart';
+import 'package:xotecariri/pages/home-page/event_card.dart';
+import 'package:xotecariri/pages/home-page/home_page.dart';
+import 'package:xotecariri/pages/lib_page/lib_page.dart';
+import 'package:xotecariri/pages/search-page/search_page.dart';
+import 'package:xotecariri/widgets/lib_card_list.dart';
+import 'package:xotecariri/widgets/logo.dart';
+import 'package:xotecariri/widgets/scroll_menu.dart';
 
 
 class HomeLogo extends StatelessWidget {
@@ -28,7 +28,7 @@ class HomeScrollMenu extends StatelessWidget {
         HomePage(), 
         LibPage(), 
         SearchPage(), 
-      ],
+      ], icons: [],
     );
   }
 }

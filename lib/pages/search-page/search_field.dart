@@ -11,7 +11,7 @@ class SearchField extends StatelessWidget {
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         filled: true,
-        fillColor: const Color.fromARGB(255, 13, 0, 86),
+        fillColor: const Color(0xFF000D1F),
         hintText: 'Digite o nome do evento...',
         hintStyle: const TextStyle(color: Colors.white70),
         border: OutlineInputBorder(

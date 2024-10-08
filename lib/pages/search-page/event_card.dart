@@ -6,6 +6,7 @@ class EventCard extends StatelessWidget {
   final String time;
   final bool isFavorite; 
   final VoidCallback onFavoriteToggle; 
+  final bool isFree; // Adicionado para verificar se o evento é gratuito
   
   const EventCard({
     super.key,
@@ -14,27 +15,29 @@ class EventCard extends StatelessWidget {
     required this.time,
     required this.isFavorite,
     required this.onFavoriteToggle,
+    required this.isFree, // Adicionado ao construtor
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 13, 0, 86),
+      color: const Color(0xFF000D1F),
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.asset(
                 image,
-                width: 120,
+                width: 100,
                 height: 100,
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(width: 12.0),
+            const SizedBox(width: 16.0),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +45,7 @@ class EventCard extends StatelessWidget {
                   Text(
                     location,
                     style: const TextStyle(
-                      color: Color.fromARGB(255, 255, 153, 0),
+                      color: Color(0xFFFFB854),
                       fontSize: 16,
                     ),
                   ),
@@ -54,15 +57,38 @@ class EventCard extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
+                  const SizedBox(height: 8.0),
+                  const Text(
+                    'Clique para detalhes',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0), // Espaçamento entre os textos
                 ],
               ),
             ),
-            IconButton(
-              icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: isFavorite ? Colors.red : Colors.white,
-              ),
-              onPressed: onFavoriteToggle, // Chama a função ao clicar
+            const SizedBox(width: 16.0),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: isFavorite ? Colors.red : Colors.white,
+                  ),
+                  onPressed: onFavoriteToggle,
+                ),
+                const SizedBox(height: 26.0), // Espaçamento entre o ícone e o texto
+                Text(
+                  isFree ? 'Grátis' : 'Pago', // Exibe Grátis ou Pago
+                  style: TextStyle(
+                    color: isFree ? Colors.green : Colors.red, // Cores para indicar grátis ou pago
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

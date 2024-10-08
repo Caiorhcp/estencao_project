@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'event_card.dart';
 
 class SearchResultList extends StatefulWidget {
-  final List<Map<String, String>> events;
+  final List<Map<String, dynamic>> events; // Mudamos para dynamic para incluir isFree
   final String searchQuery;
 
   const SearchResultList({
@@ -51,12 +51,13 @@ class _SearchResultListState extends State<SearchResultList> {
                     favoriteStates[originalIndex] = !favoriteStates[originalIndex];
                   });
                 },
+                isFree: event['isFree'] ?? false, // Usar false como valor padrão
               );
             },
           );
   }
 
-  List<Map<String, String>> _filterEvents() {
+  List<Map<String, dynamic>> _filterEvents() {
     if (widget.searchQuery.isEmpty) {
       return widget.events;
     }

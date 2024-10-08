@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_music/pages/home-page/home_page.dart';
-import 'package:flutter_music/pages/lib_page/lib_page.dart';
-import 'package:flutter_music/pages/search-page/search_page.dart';
+import 'package:xotecariri/pages/home-page/home_page.dart';
+import 'package:xotecariri/pages/lib_page/lib_page.dart';
+import 'package:xotecariri/pages/search-page/search_page.dart';
 
 class AppNavigation extends StatefulWidget {
   const AppNavigation({super.key});
@@ -23,8 +23,8 @@ class _AppNavigationState extends State<AppNavigation> {
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 3, 0, 42),
-        selectedItemColor: const Color.fromARGB(255, 255, 153, 0),
+        backgroundColor: const Color(0xFF000D1F),
+        selectedItemColor: const Color(0xFFFFB854),
         unselectedItemColor: const Color.fromARGB(170, 203, 203, 203),
         onTap: (index) {
           setState(() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_music/pages/home-page/app_navigation.dart';
+import 'package:xotecariri/pages/home-page/app_navigation.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

@@ -17,7 +17,7 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 13, 0, 86),
+      color: const Color(0xFF000D1F),
       margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -40,19 +40,19 @@ class EventCard extends StatelessWidget {
                   Text(
                     eventName,
                     style: const TextStyle(
-                        color: Color.fromARGB(255, 255, 153, 0),
+                        color: Colors.white,
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
                     'Local: $location',
-                    style: const TextStyle(color: Colors.white70),
+                    style: const TextStyle(color: Color(0xFFFFB854)),
                   ),
                   const SizedBox(height: 4.0),
                   Text(
                     'Detalhes: $details',
-                    style: const TextStyle(color: Colors.white70),
+                    style: const TextStyle(color: Color(0xFFFFB854)),
                   ),
                 ],
               ),
