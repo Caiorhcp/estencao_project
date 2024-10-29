@@ -45,7 +45,7 @@ class EventCard extends StatelessWidget {
                   Text(
                     location,
                     style: const TextStyle(
-                      color: Color(0xFFFFB854),
+                      color: Colors.white,
                       fontSize: 16,
                     ),
                   ),

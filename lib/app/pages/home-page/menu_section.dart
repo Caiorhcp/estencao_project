@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:xotecariri/pages/page1/page1.dart';
-import 'package:xotecariri/pages/page2/page2.dart';
-import 'package:xotecariri/pages/page3/page3.dart';
-import 'package:xotecariri/pages/page4/page4.dart';
-import 'package:xotecariri/widgets/scroll_menu.dart';
+import 'package:xotecariri/app/pages/page1/page1.dart';
+import 'package:xotecariri/app/pages/page2/page2.dart';
+import 'package:xotecariri/app/pages/page3/page3.dart';
+import 'package:xotecariri/app/pages/page4/page4.dart';
+import 'package:xotecariri/app/widgets/scroll_menu.dart';
 
 class MenuSection extends StatelessWidget {
   const MenuSection({super.key});

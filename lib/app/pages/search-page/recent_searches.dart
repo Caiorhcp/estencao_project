@@ -46,7 +46,7 @@ class RecentSearches extends StatelessWidget {
             style: const TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
-              color: Color(0xFFFFB854),
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
             textAlign: TextAlign.center, // Centraliza o texto
             overflow: TextOverflow.ellipsis,
@@ -56,7 +56,7 @@ class RecentSearches extends StatelessWidget {
             search['date'] ?? 'Data/Hora',
             style: const TextStyle(
               fontSize: 14.0,
-              color: Color(0xFFFFB854),
+              color: Colors.white70,
             ),
             textAlign: TextAlign.center, // Centraliza o texto
             overflow: TextOverflow.ellipsis,

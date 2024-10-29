@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'recent_events_section.dart';
 import 'future_events_section.dart';
 import 'menu_section.dart';
-import 'package:xotecariri/widgets/header.dart';  
+import 'package:xotecariri/app/widgets/header.dart';  
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

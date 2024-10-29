@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:xotecariri/widgets/logo.dart';
-import 'package:xotecariri/widgets/notification_icon.dart';  // Importa o novo componente
-import './perfil_page.dart'; // Importe a página do perfil
+import 'package:xotecariri/app/widgets/logo.dart';
+import 'package:xotecariri/app/widgets/notification_icon.dart';  // Importa o novo componente
+import 'perfil_page.dart'; 
 
 class Header extends StatelessWidget implements PreferredSizeWidget {
   const Header({super.key});
@@ -28,7 +28,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
               },
               child: CircleAvatar(
                 radius: 24, 
-                backgroundImage: AssetImage(''), 
+                backgroundImage: AssetImage('assets/images/lib2.jpeg'), 
                 child: Icon(Icons.person, size: 24), 
               ),
             ),

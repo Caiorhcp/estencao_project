@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:xotecariri/pages/home-page/home_page.dart';
-import 'package:xotecariri/pages/lib_page/lib_page.dart';
-import 'package:xotecariri/pages/search-page/search_page.dart';
+import 'package:xotecariri/app/pages/home-page/home_page.dart';
+import 'package:xotecariri/app/pages/lib_page/lib_page.dart';
+import 'package:xotecariri/app/pages/search-page/search_page.dart';
 
 class AppNavigation extends StatefulWidget {
   const AppNavigation({super.key});
